@@ -73,7 +73,6 @@ num_t *calculateDest(char *number){
 	return num;
 }
 
-
 /*
 #include <stdio.h>
 #include <string.h>
