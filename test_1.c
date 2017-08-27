@@ -4,24 +4,9 @@
 #include <limits.h>
 #include <stdint.h>
 
-void chg(char* str);
 int main(int argc, char *argv[])
 {
-	char *test = (char*) malloc(20);
-	strcpy(test,"muie");
-	printf("%s\n",test);
-	printf("%p\n",test);
-	printf("%p\n",&(*test));
-	printf("%p\n",&test);
-	chg(test);
-	printf("%s\n",test);
-	printf("%p\n",test);
-	printf("%p\n",&test);
-	free(test);
+	double a = 0.1;
+	printf("%.20f\n",a);
+
 }
-
-void chg(char *str){
-	strcpy(str,"didi do dexter");
-}
-
-
