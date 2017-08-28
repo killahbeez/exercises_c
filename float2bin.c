@@ -38,7 +38,7 @@ char *float2bin(float cnt){
 	uint8_t spaces = 0;
 
 	for(int i=0;i<bits;i++){
-		if(i>0 && i%8 == 0){
+		if(i==1 || i==9){
 			spaces++;
 			binary = (char *) realloc(binary,bits + spaces + 1);
 			*(binary + char_digit) = ' ';
