@@ -34,9 +34,14 @@ int main(int argc, char *argv[])
 
 	printf("\n_________\n");
 	while(*str){
-		printf("%c\n",*str);
-		str++;
+		printf("%c\n",*str++);
 	}
 	str = tmp;
 	printf("%s\n",str);
+	char g = 'A';
+	printf("%d\n",g);
+	for(char i = 0; i<8;i++){
+		printf("%d",(uint8_t)(g<<i)>>7);
+	}
+	printf("\n");
 }
