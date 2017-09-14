@@ -44,4 +44,9 @@ int main(int argc, char *argv[])
 		printf("%d",(uint8_t)(g<<i)>>7);
 	}
 	printf("\n");
+	char gigi[] = "didi do dexter";
+
+	printf("%s\n",gigi);
+	*(gigi+4) = 0b00000000;
+	printf("%s\n",gigi);
 }
