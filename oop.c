@@ -2,31 +2,36 @@
 #include <string.h>
 #include <stdint.h>
 
-typedef struct didi {
+typedef struct obj {
 	int result;
-	void (*meth)(struct didi* this,int a, int b);
-} didi_t;
+	void (*meth)(struct obj *, int, int);
+} obj_t;
 
-void adding(struct didi *,int,int);
-void multiply(struct didi *,int,int);
+void adding(struct obj *,int,int);
+void multiply(struct obj *,int,int);
 
 int main(){
-	didi_t obj;
+	obj_t obiect_1;
+	obj_t obiect_2;
 	
-	obj.meth = adding;
-	obj.meth(&obj,2,3);
-	printf("adding result: %d\n",obj.result);
+	obiect_1.meth = adding;
+	obiect_1.meth(&obiect_1,3,4);
+	printf("adding result: %d\n",obiect_1.result);
 
-	obj.meth = multiply;
-	obj.meth(&obj,2,3);
-	printf("multiply result: %d\n",obj.result);
+	obiect_1.meth = multiply;
+	obiect_1.meth(&obiect_1,3,4);
+	printf("multiply result: %d\n",obiect_1.result);
+	
+	obiect_2.meth = adding;
+	obiect_2.meth(&obiect_2,5,4);
+	printf("adding result: %d\n",obiect_2.result);
 }
 
-void adding(didi_t *this,int a, int b){
+void adding(obj_t *this,int a, int b){
 	this->result = a + b;
 }
 
-void multiply(didi_t *this,int a, int b){
+void multiply(obj_t *this,int a, int b){
 	this->result = a * b;
 }
 
