@@ -11,7 +11,7 @@ typedef struct {
 	uint8_t cifra:4;
 } num_t;
 
-num_t calculateDest2(char *number);
+num_t calculateDest(char *number);
 
 int main(int argc, char *argv[]){
 	num_t num;
