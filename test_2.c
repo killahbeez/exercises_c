@@ -23,6 +23,18 @@ int main(){
 	(obj.meth)(&obj,obj.a,obj.b);
 	printf("a: %d\n",obj.a);
 	printf("b: %d\n",obj.b);
+	union {
+		uint8_t a;
+		float b;
+	} un;
+
+	un.b = 345.65;
+	printf("%u\n",un.a);
+	printf("%f\n",un.b);
+	printf("%d::%x\n",*(&un.a),*(&un.a));
+	printf("%d::%x\n",*(&un.a+1),*(&un.a+1));
+	printf("%d::%x\n",*(&un.a+2),*(&un.a+2));
+	printf("%d::%x\n",*(&un.a+3),*(&un.a+3));
 }
 
 void method_1(didi_t *this,int a, int b){
