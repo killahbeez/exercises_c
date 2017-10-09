@@ -35,6 +35,14 @@ int main(){
 	printf("%d::%x\n",*(&un.a+1),*(&un.a+1));
 	printf("%d::%x\n",*(&un.a+2),*(&un.a+2));
 	printf("%d::%x\n",*(&un.a+3),*(&un.a+3));
+	uint32_t gr1 = 61455;
+	uint8_t *gr = &gr1;
+	printf("%x\n",gr1);
+	uint8_t *f = gr + 1;
+	f[0] = 0xff;
+	f[1] = 0xff;
+	f[2] = 0xff;
+	printf("%x\n",gr1);
 }
 
 void method_1(didi_t *this,int a, int b){
