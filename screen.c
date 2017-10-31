@@ -33,7 +33,9 @@ screen new_screen(uint8_t w, uint8_t h){
 void print_screen(screen *scr) {
 	for(int i=0;i<scr->height;i++){
 		for(int j=0;j<scr->width;j++){
-			printf("(%u %u %u) ",scr->p[j+i*scr->width].r, scr->p[j+i*scr->width].g, scr->p[j+i*scr->width].b);
+			//printf("(%u %u %u) ",scr->p[j+i*scr->width].r, scr->p[j+i*scr->width].g, scr->p[j+i*scr->width].b);
+			//same but with pointer arithmetic
+			printf("(%u %u %u) ",(*(((*scr).p)+j+i*(*scr).width)).r,(*(((*scr).p)+j+i*(*scr).width)).g,(*(((*scr).p)+j+i*(*scr).width)).b);
 		}
 		printf("\n");
 	}	
